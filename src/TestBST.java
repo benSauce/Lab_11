@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class TestBST {
     public static void main(String[] args) {
         // Create a BST
-        BST<String> tree = new BST<>();
+        StackBST<String> tree = new StackBST<>();
         tree.insert("George");
         tree.insert("Michael");
         tree.insert("Tom");
@@ -15,10 +15,16 @@ public class TestBST {
         // Traverse tree
         System.out.print("Inorder (sorted): ");
         tree.inorder();
+        System.out.print("\nInorder (STACKSorted): ");
+        tree.inOrder();
         System.out.print("\nPostorder: ");
         tree.postorder();
         System.out.print("\nPreorder: ");
         tree.preorder();
+
+        System.out.print("\nHeight of BST: ");
+        System.out.print(tree.height());
+
         System.out.print("\nThe number of nodes is " + tree.getSize());
 
         // Search for an element

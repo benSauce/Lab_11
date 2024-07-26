@@ -114,10 +114,18 @@ public class BST<E> implements Tree<E> {
 
     }
 
+
     public int height() {
         return height(root);
     }
 
+    /*
+     *  public int height()
+     *  description: Takes a TreeNode and calculates the height of that Treenode
+     *  by recursively calculating the heights of the left and right Treenode and only adding the max of both.
+     *  parameters: TreeNode<E>
+     *  returns: int
+     */
     public int height(TreeNode<E> root) {
         if (root == null) return -1;
         else
