@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class TestBST {
     public static void main(String[] args) {
@@ -41,5 +44,31 @@ public class TestBST {
         BST<Integer> intTree = new BST<>(numbers);
         System.out.print("\nInorder (sorted): ");
         intTree.inorder();
+
+
+        Integer[] numList = new Integer[10];
+        // Create a Scanner
+        Scanner input = new Scanner(System.in);
+        //Prompt for string input
+        System.out.print("\nEnter 10 ints: ");
+
+        //prompts the user to enter an integer
+
+        //Add numbers to numList until 0 is entered
+        for (int i = 0; i < 10; i++) {
+            numList[i] = input.nextInt();
+        }
+
+        System.out.print("\n " + Arrays.stream(numList).toList());
+
+        //To BST
+        StackBST<Integer> intTree2 = new StackBST<>(numList);
+        BST<Integer> intTree3 = new BST<>(numList);
+        System.out.print("\nPreOrder (Sorted): ");
+        intTree2.preOrder();
+
+        System.out.println("\n \n \n");
+        intTree3.preorder();
+
     }
 }
