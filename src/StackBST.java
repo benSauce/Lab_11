@@ -59,7 +59,8 @@ public class StackBST<E> extends BST {
             current = current.right;
 
         }
-    }
+    }// END OF inOrder
+
 
     //public void preOrder()
     //no parameter constructor
@@ -80,8 +81,11 @@ public class StackBST<E> extends BST {
         }
 
         Stack<TreeNode<E>> stack = new Stack<>();
+        //Current node is visited first
         stack.push(root);
 
+        // Push right and then left child to stack
+        // The left child is pushed last so that it is processed first
         while (!stack.isEmpty()) {
             TreeNode<E> current = stack.pop();
             System.out.print(current.element + " ");
@@ -93,8 +97,53 @@ public class StackBST<E> extends BST {
                 stack.push(current.left);
             }
         }
+    } // END OF preOrder
 
-
+    //public void postOrder()
+    //no parameter constructor
+    public void postOrder() {
+        postOrder(root);
     }
+
+    /*
+     *  void postOrder()
+     *  description: Takes a TreeNode and calculates the height of that Treenode
+     *  by recursively calculating the heights of the left and right Treenode and only adding the max of both.
+     *  parameters: TreeNode<E>
+     *  returns: int
+     */
+    protected void postOrder(TreeNode<E> root) {
+        if (root == null) {
+            return;
+        }
+
+        Stack<TreeNode<E>> stack1 = new Stack<>();
+        Stack<TreeNode<E>> stack2 = new Stack<>();
+
+        // Push root to first stack
+        stack1.push(root);
+
+        //Run while first stack is not empty
+        while (!stack1.isEmpty()) {
+            //Pop element from first stack and push to the second stack
+            TreeNode<E> current = stack1.pop();
+            stack2.push(current);
+
+            //Push left and right children of the removed element to the first stack
+            if (current.left != null) {
+                stack1.push(current.left);
+            }
+            if (current.right != null) {
+                stack1.push(current.right);
+            }
+        }
+
+        //Print all elements of the second stack
+        while (!stack2.isEmpty()) {
+            TreeNode<E> current = stack2.pop();
+            System.out.print(current.element + " ");
+        }
+
+    }// END OF postOrder
 
 }

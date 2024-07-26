@@ -64,11 +64,11 @@ public class TestBST {
         //To BST
         StackBST<Integer> intTree2 = new StackBST<>(numList);
         BST<Integer> intTree3 = new BST<>(numList);
-        System.out.print("\nPreOrder (Sorted): ");
-        intTree2.preOrder();
+        System.out.print("\nPostOrder (Sorted): ");
+        intTree2.postOrder();
 
         System.out.println("\n \n \n");
-        intTree3.preorder();
+        intTree3.postorder();
 
     }
 }
