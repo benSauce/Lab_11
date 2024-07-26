@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TestBST {
     public static void main(String[] args) {
         // Create a BST
@@ -24,9 +26,10 @@ public class TestBST {
 
         // Get a path from the root to Peter
         System.out.print("\nA path from the root to Peter is: ");
-        java.util.ArrayList<BST.TreeNode<String>> path = tree.path("Peter");
-        for (int i = 0; path != null && i < path.size(); i++)
+        ArrayList<TreeNode<String>> path = tree.path("Peter");
+        for (int i = 0; path != null && i < path.size(); i++){
             System.out.print(path.get(i).element + " ");
+        }
 
         Integer[] numbers = {2, 4, 3, 1, 8, 5, 6, 7};
         BST<Integer> intTree = new BST<>(numbers);
