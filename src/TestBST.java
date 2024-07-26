@@ -1,6 +1,12 @@
+/*
+ *  CS 2013
+ *  Lab 11 - Test Class
+ *  Benjamin Saucedo
+ *  This file is used to test and print various parts of lab
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.Scanner;
 
 public class TestBST {

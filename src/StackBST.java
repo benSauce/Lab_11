@@ -1,3 +1,10 @@
+/*
+ *  CS 2013
+ *  Lab 11 - BST using Stacks
+ *  Benjamin Saucedo
+ *  Implement the in-order, pre-order, and post-order methods using a stack.
+ */
+
 import java.util.Stack;
 
 public class StackBST<E> extends BST {
@@ -19,9 +26,6 @@ public class StackBST<E> extends BST {
             add(objects[i]);
     }
 
-    /**
-     * Inorder traversal from the root
-     */
     //public void inOrder()
     //no parameter constructor
     public void inOrder() {
@@ -30,10 +34,9 @@ public class StackBST<E> extends BST {
 
     /*
      *  void inorder()
-     *  description: Takes a TreeNode and calculates the height of that Treenode
-     *  by recursively calculating the heights of the left and right Treenode and only adding the max of both.
-     *  parameters: TreeNode<E>
-     *  returns: int
+     *  description: use stack to store and print values from bst inOrder
+     *  parameters: TreeNode<E> root
+     *  returns: void, but prints values
      */
     protected void inOrder(TreeNode<E> root) {
         if (root == null){
@@ -70,10 +73,9 @@ public class StackBST<E> extends BST {
 
     /*
      *  void preOrder()
-     *  description: Takes a TreeNode and calculates the height of that Treenode
-     *  by recursively calculating the heights of the left and right Treenode and only adding the max of both.
-     *  parameters: TreeNode<E>
-     *  returns: int
+     *  description: use stack to store and print values from bst preOrder
+     *  parameters: TreeNode<E> root
+     *  returns: void, nothing but prints values
      */
     protected void preOrder(TreeNode<E> root) {
         if (root == null) {
@@ -107,10 +109,9 @@ public class StackBST<E> extends BST {
 
     /*
      *  void postOrder()
-     *  description: Takes a TreeNode and calculates the height of that Treenode
-     *  by recursively calculating the heights of the left and right Treenode and only adding the max of both.
-     *  parameters: TreeNode<E>
-     *  returns: int
+     *  description: use stack to store and print values from bst postOrder
+     *  parameters: TreeNode<E> root
+     *  returns: void, nothing but prints values
      */
     protected void postOrder(TreeNode<E> root) {
         if (root == null) {

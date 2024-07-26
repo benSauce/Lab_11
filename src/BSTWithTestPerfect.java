@@ -1,3 +1,10 @@
+/*
+ *  CS 2013
+ *  Lab 11 - BST With Test Perfect
+ *  Benjamin Saucedo
+ *  Write a method that tests whether the BST is complete
+ *  Meaning it is full at every level
+ */
 public class BSTWithTestPerfect<E> extends BST {
     protected java.util.Comparator<E> c;
     /** Create a default BST with a natural order comparator */
